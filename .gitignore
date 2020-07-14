@@ -1,0 +1,6 @@
+!/logs/README.md
+/.vscode
+/.vs
+/logs/
+*.bak
+vendor/
