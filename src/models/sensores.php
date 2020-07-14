@@ -61,7 +61,7 @@ class Sensores
         $statement->bindparam("sensor", $req->sensor);
         $statement->bindparam("valor", $req->valor);
         $statement->execute();
-        $response=result="Se logro elimitar $req->id"
+        $response=result="Se cambiaron los datos de $req->id"
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
