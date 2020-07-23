@@ -18,12 +18,16 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
 
 // API group
 $app->group('/api', function () use ($app) {
-   
-    //REGISTROUSUARIOS
-    $app->post('/rutacalculadora','funcionCalculadora');
 
-    $app->post('/sensores','funcionsensores');
-    $app->get('/sensores','funciongetSensoreData');
-    
-
+    $app->post('/cultivos','funcionInsertarPlanta');
+    $app->post('/registro','funcionInsertarRegistro');
+    $app->post('/zonas','funcionInsertarZona');
+    $app->post('/antenas','funcionInsertarAntena');
+    $app->post('/plantazona','funcionInsertarPlantaZona');
+    $app->get('/cultivos','funcionConsultaDatos');
+    $app->delete('/cultivos','funcionDeletePlanta');
+    $app->delete('/zonas','funcionDeleteZona');
+    $app->delete('/antenas','funcionDeleteAntena');
+    $app->put('/cultivos','funcionUpdatePlanta');
+    $app->put('/antenas','funcionUpdateAntena');
 });

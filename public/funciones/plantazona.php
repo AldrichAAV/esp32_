@@ -1,0 +1,7 @@
+<?
+require __DIR__ . '/../../src/models/plantazona.php';
+
+function funcionInsertarPlantaZona ($request){
+    $objSensor= new plantazona();
+    return $objSensor->insertarPlantaZona($request);
+}

@@ -14,7 +14,7 @@ class Sensores
     $this->con = null;
   }
 
-  public function insertarSensor($request)
+ public function insertarSensor($request)
   {
     $req = json_decode($request->getbody());
 
@@ -61,7 +61,7 @@ class Sensores
         $statement->bindparam("sensor", $req->sensor);
         $statement->bindparam("valor", $req->valor);
         $statement->execute();
-        $response=result="Se cambiaron los datos de $req->id"
+        $response->result="Se cambiaron los datos de $req->id";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
