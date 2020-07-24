@@ -24,11 +24,10 @@ class antenas
         $statement->bindparam("idZona", $req->idZona);
         $statement->bindparam("Recepcion", $req->Recepcion);
         $statement->execute();
-        $response="Antena registrada con exito";
+        $response->mensaje="Antena registrada con exito";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
-
     return json_encode($response);
   }
   public function deleteAntena($request){
@@ -39,7 +38,7 @@ class antenas
         $statement = $this->con->prepare($sql);
         $statement->bindparam("idAntena", $req->idAntena);
         $statement->execute();
-        $response->$result="Se elimino exitosamente la Antena";
+        $response->mensaje="Se elimino exitosamente la Antena";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage(); }
     return json_encode($response);  }
@@ -54,7 +53,7 @@ class antenas
           $statement->bindparam("idZona", $req->idZona);
           $statement->bindparam("Recepcion", $req->Recepcion);
           $statement->execute();
-          $response=$req;
+          $response->mensaje=$req;
         } catch (Exception $e) {
           $response->mensaje = $e->getMessage(); }
       return json_encode($response);  }

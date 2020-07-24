@@ -24,7 +24,7 @@ class Cultivos
         $statement->execute();
         //$response="Planta registrada con exito";
         $lastInsertId = $this->con->lastInsertId();
-        $response="Planta registrada con exito, el ID de la planta es $lastInsertId";
+        $response->mensaje="Planta registrada con exito, el ID de la planta es $lastInsertId";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
@@ -47,7 +47,7 @@ class Cultivos
         $statement->execute();
         //$response="Registro de datos exitoso";
         $lastInsertId = $this->con->lastInsertId();
-        $response="Registro exitoso, el ID del registro es $lastInsertId";
+        $response->mensaje="Registro exitoso, el ID del registro es $lastInsertId";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
@@ -69,7 +69,7 @@ class Cultivos
         $statement->execute();
         //$response="Zona registrada con exito";
         $lastInsertId = $this->con->lastInsertId();
-        $response="Zona registrada con exito, el ID de la Zona es $lastInsertId";
+        $response->mensaje="Zona registrada con exito, el ID de la Zona es $lastInsertId";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
@@ -88,7 +88,7 @@ class Cultivos
         $statement->bindparam("idZona", $req->idZona);
         $statement->bindparam("Recepcion", $req->Recepcion);
         $statement->execute();
-        $response="Antena registrada con exito";
+        $response->mensaje="Antena registrada con exito";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
@@ -106,7 +106,7 @@ class Cultivos
         $statement->bindparam("idPlanta", $req->idPlanta);
         $statement->bindparam("idZona", $req->idZona);
         $statement->execute();
-        $response=$req;
+        $response->mensaje=$req;
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
@@ -145,7 +145,7 @@ class Cultivos
         $statement->bindparam("Hmedad", $req->Hmedad);
         $statement->bindparam("fecha", $req->fecha);
         $statement->execute();
-        $response=$req;
+        $response->mensaje=$req;
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage(); }
     return json_encode($response);  }

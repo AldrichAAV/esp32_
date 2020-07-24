@@ -28,7 +28,7 @@ class registro
         $statement->execute();
         //$response="Registro de datos exitoso";
         $lastInsertId = $this->con->lastInsertId();
-        $response="Registro exitoso, el ID del registro es $lastInsertId";
+        $response->mensaje="Registro exitoso, el ID del registro es $lastInsertId";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }

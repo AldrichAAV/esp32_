@@ -28,7 +28,7 @@ class zonas
         $statement->execute();
         //$response="Zona registrada con exito";
         $lastInsertId = $this->con->lastInsertId();
-        $response="Zona registrada con exito, el ID de la Zona es $lastInsertId";
+        $response->mensaje="Zona registrada con exito, el ID de la Zona es $lastInsertId";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
@@ -43,7 +43,7 @@ class zonas
         $statement = $this->con->prepare($sql);
         $statement->bindparam("idZona", $req->idZona);
         $statement->execute();
-        $response->$result="Se elimino exitosamente la Zona";
+        $response->mensaje="Se elimino exitosamente la Zona";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage(); }
     return json_encode($response);  }

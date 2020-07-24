@@ -23,7 +23,7 @@ class plantazona
         $statement->bindparam("idPlanta", $req->idPlanta);
         $statement->bindparam("idZona", $req->idZona);
         $statement->execute();
-        $response=$req;
+        $response->mensaje=$req;
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
