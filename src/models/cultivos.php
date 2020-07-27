@@ -158,7 +158,7 @@ class Cultivos
           $statement = $this->con->prepare($sql);
           $statement->bindparam("idPlanta", $req->idPlanta);
           $statement->execute();
-          $response->$result="Se elimino exitosamente la Planta";
+          $response->mensaje="Se elimino exitosamente la Planta";
         } catch (Exception $e) {
           $response->mensaje = $e->getMessage(); }
       return json_encode($response);  }
