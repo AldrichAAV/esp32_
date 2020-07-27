@@ -12,6 +12,21 @@ class registro
   {
     $this->con = null;
   }
+  public function selectplanta($request){
+    $req = json_decode($request->getbody());
+
+    $sql = "SELECT * FROM planta";
+    $response=new stdClass();
+      try {
+        $statement = $this->con->prepare($sql);  
+        $statement->execute();        
+        $response->result=$statement->fetchall(PDO::FETCH_OBJ);
+      } catch (Exception $e) {
+        $response->mensaje = $e->getMessage();
+      }
+
+    return json_encode($response);
+  }
   public function insertarRegistro($request)
   {
     $req = json_decode($request->getbody());
