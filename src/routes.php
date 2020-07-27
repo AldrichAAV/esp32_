@@ -32,5 +32,6 @@ $app->group('/api', function () use ($app) {
     $app->put('/antenas','funcionUpdateAntena');
     $app->post('/postconsulta','funcionConsultaDatos');
     $app->put('/registro','funcionselectplantas');
+    $app->put('/plantazona','funcionUR');
     
 });
