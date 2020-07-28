@@ -15,7 +15,7 @@ class plantazona
   public function UR($request){
     $req = json_decode($request->getbody());
 
-    $sql = "SELECT * from registros order by idRegistro asc limit 1;";
+    $sql = "SELECT * from registros order by idRegistro desc limit 1;";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);  
